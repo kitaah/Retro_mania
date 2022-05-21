@@ -1,0 +1,859 @@
+/* CSS RESET */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* GENERAL PROPERTIES */
+/* Border-box commune à toutes les pages + souris personnalisée */
+* {
+	box-sizing: border-box;
+	cursor: url("../img/icons/cursor_icon/cursor.cur"), default;
+}
+
+/* Déroulé en douceur de la souris au clic des ancres */
+html {
+	scroll-behavior: smooth;
+}
+
+/* Couleur de texte, de fond et police communes à toutes les pages */
+body {
+	color: #ffffff;
+	background: linear-gradient(#000000, #800080) no-repeat fixed; 
+	font-family:'Times New Roman', Arial, Helvetica, sans-serif;
+}
+
+/* Liens non-soulignés et de couleur blanche par défaut */
+body a {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+/* ELEMENTS COMMUNS A TOUTES LES PAGES */
+/* Bloc transparent avant les sections de la taille du header */
+.text__content--hidden {
+	height: 6rem;
+	visibility: hidden;
+}
+
+/* Modèle type de titre h1 */
+@font-face {
+	font-family: 'Eighties_free';
+	src: url('font/Eighties_free/Eighties_FREE.ttf') format('truetype'),
+		url('font/Eighties_free/Eighties_FREE.otf') format('otf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.h1-model {
+	font-family: 'Eighties_Free', 'Times New Roman', Arial, Helvetica, sans-serif;
+	font-size: 3rem;
+	text-align: center;
+	letter-spacing: 0.12rem;
+	margin: 5rem 0 3rem 0;
+}
+
+.h1-model span {
+	border-bottom: 0.1rem solid #ffffff;
+	padding-bottom: 0.3rem;
+	
+}
+
+/* Effet de fondu au niveau : collections + about us */
+.collections__background-img, .collections__background-img, .about-us__container {
+	animation: fadeIn 1s;
+	-webkit-animation: fadeIn 1s;
+	-moz-animation: fadeIn 1s;
+	-o-animation: fadeIn 1s;
+	-ms-animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
+
+/* HAUT DE PAGE COMMUN A TOUTES LES PAGES */
+
+/* Header */
+.header__container{
+	background: linear-gradient(black, purple) no-repeat fixed;
+	background: -moz-linear-gradient(black, purple) no-repeat fixed;
+	background: -ms-linear-gradient(black, purple) no-repeat fixed;
+	background: -o-linear-gradient(black, purple) no-repeat fixed;
+	background: -webkit-linear-gradient(black, purple) no-repeat fixed;
+	border-bottom: 3px solid transparent;
+	border-image: linear-gradient(to right, blue, red);
+	border-image: -moz-linear-gradient(to right, blue, red);
+	border-image: -ms-linear-gradient(to right, blue, red);
+	border-image: -o-linear-gradient(to right, blue, red);
+	border-image: -webkit-linear-gradient(to right, blue, red);
+	border-image-slice: 1;
+	font-size: 1rem;
+	opacity: 0.90;
+	width: 100%;
+	position: fixed;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	vertical-align: middle;
+}
+
+/* Menus de gauche HOME / COLLECTIONS / ABOUT US */
+.header__nav-left-menu, .header__nav-left-menu--dropdown {
+	padding-left: 1.3rem;
+	padding-right: 1.3rem;
+	vertical-align: middle;
+}
+
+/* Sous-menu déroulant pour COLLECTIONS */
+.header__nav-left-menu--dropdown-content {
+	background-color: #3D0E4A;
+	color: white;
+	text-align: left;
+	font-size: 1rem;
+	line-height: 1.8rem;
+	display: none;
+	position: absolute;	
+	width: 7rem;
+}
+
+.header__nav-left-menu--dropdown:hover .header__nav-left-menu--dropdown-content {
+	display: inline-block;
+	opacity: 0.8;
+}
+
+.header__nav-left-menu--dropdown-content li:hover {
+	background: linear-gradient(to right, purple 0%, pink 100%); 
+	background: -moz-linear-gradient(to right, purple 0%, pink 100%); 
+	background: -ms-linear-gradient(to right, purple 0%, pink 100%); 
+	background: -o-linear-gradient(to right, purple 0%, pink 100%); 
+	background: -webkit-linear-gradient(to right, purple 0%, pink 100%); 
+  } /* ancienne suggestion pour la couleur background-color: #591731; */
+
+.header__nav-left-menu a:hover, .header__nav-left-menu--dropdown-content:hover {
+	color: red; 
+}
+
+.header__nav-left-menu--dropdown-content a:focus {
+	outline:none;
+	color: rgb(255, 255, 0);
+}
+
+/* Logo website */
+.header__logo {
+	width: 27rem;
+	padding-left: 1.7rem;
+	padding-right: 1.7rem;
+	vertical-align: middle;
+}
+
+/* Menu de droite login + shopping cart + barre de recherche */
+.header__nav-right-menu {
+	padding-left: 1.3rem;
+	padding-right: 1.3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.header__user-icon {
+	margin-right: 1.8rem;
+	vertical-align: middle;
+}
+
+.header__cart-icon {
+	margin-right: 3rem;
+	vertical-align: middle;
+}
+
+.header__search-icon {
+	margin-left: 0.6rem;
+	vertical-align: middle;
+}
+
+.header__search-bar {
+	vertical-align: middle;
+}
+
+input.header__search-bar:focus {
+	background: purple;
+	color: white;
+}
+
+/* FOOTER */
+/* Footer container main properties */
+.footer__container {
+background-color: #6B1269;
+font-size: 0.8rem;
+text-align: left;
+display: flex;
+justify-content: center;
+margin-top: 5rem;
+padding: 1rem 0 0.5rem 0;
+}
+
+.footer__container--no-margin {
+	background-color: #6B1269;
+font-size: 0.8rem;
+text-align: left;
+display: flex;
+justify-content: center;
+margin-top:0rem;
+padding: 1rem 0 0.5rem 0;
+
+}
+
+/* Navigation bar properties  */
+.footer__nav:nth-child(2) {
+	margin: 0 4rem 0 4rem;
+}
+
+.footer__nav h1 {
+	color: #ffc0cb;
+	text-transform: uppercase;
+	padding-bottom: 1rem;
+}
+
+.footer__nav li {
+	display: flex;
+	padding-bottom: 0.5rem;
+}
+
+/* Navigation bar icons : facebook / instagram / twitter */
+.footer__icon {
+	margin-right: 0.2rem;
+}
+
+/* Mouse hovering : linear-gradient property for hyperlinks */
+.footer a:hover {
+	background: linear-gradient(to right, gold 0%, red 100%);
+	background: -moz-linear-gradient(to right, gold 0%, red 100%);
+	background: -ms-linear-gradient(to right, gold 0%, red 100%);
+	background: -o-linear-gradient(to right, gold 0%, red 100%);
+	background: -webkit-linear-gradient(to right, gold 0%, red 100%);
+	background-clip: text;
+	-moz-background-clip: text;
+	-ms-background-clip: text;
+	-o-background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+}
+
+/* Copyright mention */
+.footer__copyright {
+	color: #ffc0cb;
+	font-size: 0.8rem;
+	text-align: center;
+	padding: 0.3rem 0 0.3rem 0;
+}
+
+/* HOME PAGE */
+
+/* -- SECTION : Redirection-top -- */
+/* Redirection to the hats collections page */
+.redirection-top {
+	background-image: url("../img/wallpaper/test.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 10rem 0 10rem 0;
+}
+
+/* Fade in effect applied to the redirection-top article */
+.redirection-top {
+animation: fadeIn 1s;
+-webkit-animation: fadeIn 1s;
+-moz-animation: fadeIn 1s;
+-o-animation: fadeIn 1s;
+-ms-animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+/* Title Retrowave hat brand */
+@font-face {
+	font-family: 'Those_glitch';
+	src: url('font/Those_glitch/Those_glitch.ttf') format('truetype'),
+		url('font/Those_glitch/Those_glitch.otf') format('otf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+#redirection-top__title {
+	color: #feb6ff;
+	font-family: "Roboto";
+	font-size: 3.5rem;
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+/* Shop now button */
+#redirection-top__button {
+	color: #ffc0cb;
+	background-color: transparent;
+	border-image: linear-gradient(to right, #800080, #ffc0cb);
+	border-image: -moz-linear-gradient(to right, #800080, #ffc0cb);
+	border-image: -ms-linear-gradient(to right, #800080, #ffc0cb);
+	border-image: -o-linear-gradient(to right, #800080, #ffc0cb);
+	border-image: -webkit-linear-gradient(to right, #800080, #ffc0cb);
+	border-image-slice: 1;
+	font-size: 1.5rem;
+	margin: 0 auto;
+    display: flex;
+	justify-content: center;
+	box-shadow: 0 0.375rem 0.375rem rgba(0, 0, 0, 0.8);
+	padding: 0.5rem 2rem 0.5rem 2rem;
+}
+
+#redirection-top__button:hover {
+	transform: scale(1.05);
+	transition: transform .5s;
+} 
+
+/* Welcome gif */
+.welcome__gif {
+	width: 100%;
+	height: auto;
+	display: block;	
+}
+
+/* -- SECTION : Redirection-bottom -- */
+/* Flexbox */
+.redirection-bottom__container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* Hat collections images */
+#redirection-bottom__funky-animal-img, #redirection-bottom__japan-wave-img, #redirection-bottom__mystical-sunset-img {
+	width: 40rem;
+	height: 20rem;
+	border: 0.12rem solid transparent;
+	border-image: linear-gradient(#800F6D 0%,#C946B7 100%);
+	border-image: -moz-linear-gradient(#800F6D 0%,#C946B7 100%);
+	border-image: -ms-linear-gradient(#800F6D 0%,#C946B7 100%);
+	border-image: -o-linear-gradient(#800F6D 0%,#C946B7 100%);
+	border-image: -webkit-linear-gradient(#800F6D 0%,#C946B7 100%);
+	border-image-slice: 1;	
+}
+
+.redirection-bottom__nav:nth-child(2) {
+	margin: 4rem 0 4rem 0;
+}
+
+.redirection-bottom__nav figure {
+	background-color: rgb(48, 13, 48);
+	padding: 2rem;
+	border-top: 5rem solid transparent;
+	border-bottom: 5rem solid transparent;
+	border-image: url("../img/wallpaper/lol.gif") 30 round;
+	box-shadow: rgba(0, 0, 0, 0.56) 0px 1.375rem 4.375rem 0.25rem;
+	border-style: solid;
+} 
+
+#redirection-bottom__funky-animal-img:hover, #redirection-bottom__japan-wave-img:hover, #redirection-bottom__mystical-sunset-img:hover {
+	transform: scale(1.05);
+	transition: transform .5s;
+}
+
+/* COLLECTIONS PAGE */
+/* Image de fond commune aux collections */
+.collections__background-img {
+	background-image:url('../img/wallpaper/synth.jpg');
+	background-size: 100% 100%;
+	padding: 2rem 0 2rem 0;
+}
+
+/* Flexbox au niveau des blocs des produits */
+/*
+.jackets-collection__container, .tshirts-collection-p1__container, .tshirts-collection-p2__container,
+.hoodies-collection__container, .glasses-collection__container, .sneakers-collection__container, .hats-collection__container {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+/* BLoc encadrant les images + texte avec prix et noms des produits */
+/*
+.jackets-collection__item, .tshirts-collection-p1__item, .tshirts-collection-p2__item,
+.hoodies-collection__item, .glasses-collection__item, .sneakers-collection__item, .hats-collection__item {
+	padding: 0 0.6rem 0 0.6rem;
+	margin: 1.6rem 0 1.6rem 0;
+}
+
+/* Images des produits */
+/*
+.jackets-collection__img, .tshirts-collection-p1__img, .tshirts-collection-p2__img, 
+.hoodies-collection__img, .glasses-collection__img, .sneakers-collection__img, .hats-collection__img {
+	width: 15.5rem;
+	height: 16rem;
+	vertical-align: middle;
+	border: 0.12rem solid purple;
+	border-bottom: 0.12rem solid purple;
+} 
+
+/* width: 15.5rem / height: 16rem */
+
+.glasses-collection__img:hover {	
+	filter: brightness(1.7);
+} 
+
+.jackets-collection__img:hover, .tshirts-collection-p1__img:hover, .tshirts-collection-p2__img:hover, 
+.hoodies-collection__img:hover, .sneakers-collection__img:hover, .hats-collection__img:hover {	
+	filter: brightness(90%);	
+}
+
+/* Titre sous les images */
+@font-face {
+	font-family: 'Roboto_regular';
+	src: url('font/Roboto_regular/Roboto_regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.jackets-collection__item figcaption, .tshirts-collection-p1__item figcaption, .tshirts-collection-p2__item figcaption,
+.hoodies-collection__item figcaption, .glasses-collection__item figcaption, .sneakers-collection__item figcaption, 
+.hats-collection__item figcaption {
+	color: #ffffff;
+	text-align: center;
+	background-image: url('../img/wallpaper/sun.jpg');
+	background-size: 100% 100%;
+	border: 0.12rem solid #800080;
+	border-top: 0.1rem solid #800080;
+	text-transform: uppercase;
+	font-family: 'Roboto_regular', 'Times New Roman', Arial, Helvetica, sans-serif;
+	font-size: 0.7rem;
+	line-height: 0.9rem;
+	width: 15.5rem;
+	letter-spacing: 0.12rem;
+	padding-bottom: 1.4rem;
+}
+
+.jackets-collection__item figcaption span, .tshirts-collection-p1__item figcaption span, .tshirts-collection-p2__item figcaption span,
+.hoodies-collection__item figcaption span, .glasses-collection__item figcaption span, .sneakers-collection__item figcaption span, 
+.hats-collection__item figcaption span {		
+	color: #ffd700;
+	font-weight: bold;
+	line-height: 1.5rem;
+}
+
+/* BLoc invisible pour les collections HOODIES + GLASSES */
+.glasses-collection__item--hidden, .hoodies-collection__item--hidden {
+	width: 16.7rem;
+	visibility: hidden;
+}
+
+/* Previous next button relatif à la collection T-SHIRTS */
+.tshirts-collection-p1__button, .tshirts-collection-p2__button {
+	margin-top: 2rem;
+	text-align: center;
+}
+
+.tshirts-collection-p1__next-button:hover, .t-shirts-collection-p2__previous-button:hover {
+	background-color:#ffb6c1;
+	color: #000000;
+}
+
+.tshirts-collection-p1__next-button:hover, .tshirts-collection-p2__previous-button:hover  {
+	background-color:#ffb6c1;
+	color: #000000;
+}
+
+.tshirts-collection-p1__previous-button, .tshirts-collection-p2__next-button, .tshirts-collection-p1__next-button, 
+.tshirts-collection-p2__previous-button  {
+	padding-top: 0.6rem;
+	padding-bottom: 0.6rem;
+	padding-left: 1.9rem;
+	padding-right: 1.9rem;
+}
+
+.tshirts-collection-p1__previous-button, .tshirts-collection-p2__next-button {
+	background-color: #f1f1f1;
+	color: black;
+}
+
+.tshirts-collection-p1__next-button , .tshirts-collection-p2__previous-button {
+	background-color: rgb(251, 0, 130);
+	color: #ffffff;
+}
+
+.tshirts-collection-p1__page, .tshirts-collection-p2__page {
+	color: #ffc0cb;
+	font-size: 0.9rem;
+	text-transform: uppercase;
+	text-align: center;
+	margin-top: 1.5rem;
+}
+
+/* LEGAL : SHIPPING AND RETURN / PRIVACY POLICY / TERMS OF SERVICE PAGES PAGES */
+/* Sections for each pages */
+.legal {
+	font-size: 1rem;
+	text-align: justify;
+	margin: auto;
+	width: 50rem;
+}
+
+/* Global content for each pages */
+.legal__content {
+	border: 0.4rem solid transparent;
+	border-image: url('../img/wallpaper/purple.png') 30 round;
+	margin-bottom: 2rem;
+}
+
+.legal__content h2 {
+	background-color: rgb(96, 12, 96);
+	color: #ffc0cb;
+	font-size: 1rem;
+	text-transform: uppercase;
+	border-bottom: 0.2rem solid transparent;
+	border-image: url("../img/wallpaper/purple.png") 30 round;
+	margin-bottom: 1rem;
+	padding: 0.8rem 0.8rem 0.8rem 0.8rem;
+}
+
+.legal__content p {
+	line-height: 1.3rem;
+	padding: 0.6rem 0.8rem 0.6rem 0.8rem;
+}
+
+.legal__content p span {
+	color: #FFBAE5;
+	font-weight: bold;
+}
+
+.legal__content ul {
+	list-style-type: square;
+	padding: 0 0.5rem 0 1.8rem;
+}
+
+.legal__content li {
+	line-height: 1.3rem;
+}
+
+.legal__link--hover:hover {
+	color: #20b2aa;
+}
+
+/* ABOUT PAGE :*/ 
+/* SECTIONS -- ABOUT US + MANUFACTURING PROCESS */
+.about-us, .manufacturing-process {
+	font-size: 1rem;
+	text-align: center;
+}
+
+/* SECTION -- ABOUT US */
+/* Introductory sentence */
+.about-us__intro {
+	margin-bottom: 2rem;
+}
+
+/* Container */
+.about-us__container {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 1.5rem;
+	width: 65rem;
+	margin: auto;
+}
+
+/* Funders company images */
+.about-us__img {
+	border: 0.1rem solid #FF3776;
+	width: 100%;
+	height: auto;	
+} 
+
+
+/* Block about the funders : text + image about each founder */
+.about-us__founders {
+	background-image: url('../img/wallpaper/palmito.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+	color: #ffffff;
+	padding: 1.2rem 0.8rem 1.2rem 0.8rem;
+	box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.8);
+}
+
+.about-us__founders {
+	border-top: 0.1rem solid #FF3776;
+	border-bottom: 0.1rem solid #FF3776;
+}
+
+.about-us__founders:first-child {
+	border-left: 0.1rem solid #FF3776;
+}
+
+.about-us__founders:last-child {
+	border-right: 0.1rem solid #FF3776;
+}
+
+/* Presentation text about each founder */
+.about-us__founders-text {
+	text-align: justify;
+	padding-right: 1.6rem;
+	width: 45rem;
+}
+
+.about-us__founders-text h2 {
+	font-size: 1.2em;
+	font-weight: bold;
+	margin-bottom: 2rem;
+}
+
+.about-us__founders-text h2 span {
+	font-size: 0.9em;
+    font-style: italic;
+}
+
+.about-us__founders-text p {
+	margin-bottom: 0.5rem;
+}
+
+/* Last sentence */
+.about-us__end {
+	margin-top: 2rem;
+}
+
+/* Pixel heart icons */
+.about-us__end-icon {
+	margin-top: 0.4rem;
+	width: 1.5rem;
+}
+
+/* SECTION -- MANUFACTURING PROCESS */
+/* Introductory sentence */
+.manufacturing-process p {
+	margin-bottom: 0.5rem;
+}
+
+/* Youtube video */
+.manufacturing-process iframe {
+	border: 3.125rem solid transparent;
+	border-image: url("../img/aboutus/tv.png") stretch;
+	border-image-slice: 25%;
+}
+
+/* CONTACT US PAGE */
+/* Section */
+.contact-us {
+	font-size: 1rem;
+}
+
+/* Introductory sentence */
+.contact-us__intro {
+	text-align: center;
+}
+
+/* Flexbox : phone number + mail */
+.contact-us__container {
+	display: flex;
+	justify-content: center;
+	margin: 1.9rem 0 1.9rem 0;
+}
+
+/* Flexbox : images + contact (phone number and email) */
+.contact-us__ref {
+	display: flex;
+}
+
+.contact-us__ref:first-child {
+	margin-right: 3.7rem;
+}
+
+/* phone + mail icons */
+.contact-us__icon {
+	width: 1.1rem;
+	margin-right: 0.3rem;
+}
+
+/* Contact form */
+.contact-us__form {
+	display: flex;
+	justify-content: center;
+	line-height: 1.7rem;
+	margin-bottom: 1.9rem;
+}
+
+.contact-us__form label span {
+	color: #ff0000;
+}
+
+.contact-us__form-aspects {
+	border: 0.1rem solid #ffc0cb;
+	background: url(../img/wallpaper/mountain.jpg) no-repeat center;
+	background-size: 100% 100%;
+	padding: 1.2rem;
+	box-shadow: rgba(0, 0, 0, 0.3) 0 1.188rem 2.375rem, rgba(0, 0, 0, 0.22) 0 0.938rem 0.75rem;
+}
+
+.contact-us__form-aspects input[type=text], input[type=email], input[type=tel], textarea {
+	padding: 0.5rem;
+	border-radius: 0.2rem;
+	border: 0.1rem solid #ffc0cb;
+}
+
+.contact-us__form-aspects textarea {
+	resize: none;
+	font-size: 0.9rem;
+}
+
+input:focus::placeholder {
+    color: rgb(0, 255, 242);
+}
+
+textarea:focus::placeholder {
+    color: rgb(0, 255, 242);
+}
+
+.contact-us form input:focus, .contact-us form textarea:focus {
+	background: linear-gradient(black, purple) no-repeat fixed; 
+	color: white;
+}
+
+/* Contact form : SEND button */
+.contact-us__form-submit {
+	color: white;
+	font-size: 0.8rem;
+	background-color: rgb(66, 12, 66);
+	border: 0.1rem solid #ffc0cb;
+	margin-top: 0.8rem;
+	padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+}
+
+.contact-us__form-submit--center {
+	text-align: center;
+}
+
+.contact-us__form-submit:hover {
+	background-color: rgb(183, 35, 186);
+}
+
+/* Desk hours info */
+.contact-us__desk-hours {
+	background-image: url("../img/wallpaper/purple_geometric.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	text-align: center;
+	line-height: 1.5rem;
+    width: 12rem;
+    margin: auto; 
+    border: 0.1rem solid #ffc0cb;
+	border-radius: 1rem;
+	padding: 0.5rem;
+	box-shadow: rgba(0, 0, 0, 0.3) 0 1.188rem 2.375rem, rgba(0, 0, 0, 0.22) 0 0.938rem 0.75rem;
+	}
+
+/* html {
+	/* 16 * 62.5 = 1.000 */
+ /*font-size: 62.5%; 1em = 10px */
+
+ /* img {
+	 width: 100%;
+	 height: auto;
+	 display: block;
+	 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
